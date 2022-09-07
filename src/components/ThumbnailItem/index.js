@@ -14,11 +14,13 @@ const ThumbnailItem = props => {
 
   return (
     <li className={itemStyling} onClick={onClickItem}>
-      <img
-        className="gallery-thumbnail-img"
-        src={thumbnailUrl}
-        alt={thumbnailAltText}
-      />
+      <button type="button" className="gallery-thumbnail-button">
+        <img
+          className="gallery-thumbnail-img"
+          src={thumbnailUrl}
+          alt={thumbnailAltText}
+        />
+      </button>
     </li>
   )
 }
