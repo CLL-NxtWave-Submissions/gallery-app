@@ -1,20 +1,26 @@
 import './index.css'
 
-const ThumbnailItem = (props) {
-    const {itemData, onItemSelect, isSelectedItem} = props
-    const {thumbnailUrl, thumbnailAltText} = itemData
+const ThumbnailItem = props => {
+  const {itemData, onItemSelect, isSelectedItem} = props
+  const {thumbnailUrl, thumbnailAltText} = itemData
 
-    const itemStyling = `gallery-thumbnail-item ${isSelectedItem ? 'selected-gallery-thumbnail' : ''}`
+  const itemStyling = `gallery-thumbnail-item ${
+    isSelectedItem ? 'selected-gallery-thumbnail' : ''
+  }`
 
-    const onClickItem = () => {
-        onItemSelect(itemData)
-    }
+  const onClickItem = () => {
+    onItemSelect(itemData)
+  }
 
-    return (
-        <li className={itemStyling} onClick={onClickItem}>
-            <img className="gallery-thumbnail-img" src={thumbnailUrl} alt={thumbnailAltText} />
-        </li>
-    )
+  return (
+    <li className={itemStyling} onClick={onClickItem}>
+      <img
+        className="gallery-thumbnail-img"
+        src={thumbnailUrl}
+        alt={thumbnailAltText}
+      />
+    </li>
+  )
 }
 
 export default ThumbnailItem

@@ -1,3 +1,8 @@
+import {Component} from 'react'
+import './index.css'
+
+import ThumbnailItem from '../ThumbnailItem'
+
 const imagesList = [
   {
     id: 0,
@@ -68,11 +73,6 @@ const imagesList = [
     thumbnailAltText: 'nature river thumbnail',
   },
 ]
-
-import {Component} from 'react'
-import './index.css'
-
-import ThumbnailItem from '../ThumbnailItem'
 
 export default class Gallery extends Component {
   state = {
