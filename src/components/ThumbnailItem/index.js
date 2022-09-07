@@ -9,7 +9,7 @@ const ThumbnailItem = props => {
   }`
 
   const onClickItem = () => {
-    onItemSelect(itemData)
+    onItemSelect(itemData.id)
   }
 
   return (
