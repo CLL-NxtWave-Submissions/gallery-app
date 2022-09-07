@@ -74,20 +74,23 @@ const imagesList = [
   },
 ]
 
+const getGalleryImageData = selectedImageId =>
+  imagesList.find(imageData => imageData.id === selectedImageId)
+
 export default class Gallery extends Component {
   state = {
-    galleryImageUrl: imagesList[0].imageUrl,
-    galleryImageAltText: imagesList[0].imageAltText,
+    galleryImageId: imagesList[0].id,
   }
 
-  onThumbnailImageSelect = selectedImageData =>
+  onThumbnailImageSelect = selectedImageId =>
     this.setState({
-      galleryImageUrl: selectedImageData.imageUrl,
-      galleryImageAltText: selectedImageData.imageAltText,
+      galleryImageId: selectedImageId,
     })
 
   render() {
-    const {galleryImageUrl, galleryImageAltText} = this.state
+    const {galleryImageId} = this.state
+    const galleryImageData = getGalleryImageData(galleryImageId)
+    const {galleryImageUrl, galleryImageAltText} = galleryImageData
 
     return (
       <div className="gallery-bg-container">
@@ -104,6 +107,7 @@ export default class Gallery extends Component {
               key={imageData.id}
               itemData={imageData}
               onItemSelect={this.onThumbnailImageSelect}
+              isSelectedItem={imageData.id === galleryImageId}
             />
           ))}
         </ul>
