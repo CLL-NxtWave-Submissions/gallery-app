@@ -1,6 +1,7 @@
 .gallery-thumbnail-item {
   border-radius: 0.6rem;
   margin-right: 1rem;
+  margin-bottom: 1rem;
   opacity: 0.5;
   cursor: pointer;
 }
@@ -10,6 +11,13 @@
 }
 
 .gallery-thumbnail-img {
-  height: 5rem;
-  width: 5rem;
+  height: 4rem;
+  width: 4rem;
+}
+
+@media (min-width: 768px) {
+  .gallery-thumbnail-img {
+    height: 5rem;
+    width: 5rem;
+  }
 }
