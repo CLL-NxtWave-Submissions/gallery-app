@@ -94,19 +94,21 @@ export default class Gallery extends Component {
 
     return (
       <div className="gallery-bg-container">
-        <img className="gallery-img" src={imageUrl} alt={imageAltText} />
-        <h1 className="gallery-title">Nature Photography</h1>
-        <p className="gallery-attribution">Nature Photography by Rahul</p>
-        <ul className="gallery-thumbnails-container">
-          {imagesList.map(imageData => (
-            <ThumbnailItem
-              key={imageData.id}
-              itemData={imageData}
-              onItemSelect={this.onThumbnailImageSelect}
-              isSelectedItem={imageData.id === galleryImageId}
-            />
-          ))}
-        </ul>
+        <div className="gallery-content-container">
+          <img className="gallery-img" src={imageUrl} alt={imageAltText} />
+          <h1 className="gallery-title">Nature Photography</h1>
+          <p className="gallery-attribution">Nature Photography by Rahul</p>
+          <ul className="gallery-thumbnails-container">
+            {imagesList.map(imageData => (
+              <ThumbnailItem
+                key={imageData.id}
+                itemData={imageData}
+                onItemSelect={this.onThumbnailImageSelect}
+                isSelectedItem={imageData.id === galleryImageId}
+              />
+            ))}
+          </ul>
+        </div>
       </div>
     )
   }
