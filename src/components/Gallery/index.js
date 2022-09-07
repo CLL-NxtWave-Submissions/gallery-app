@@ -69,4 +69,45 @@ const imagesList = [
   },
 ]
 
-// Write your code here.
+import {Component} from 'react'
+import './index.css'
+
+import ThumbnailItem from '../ThumbnailItem'
+
+export default class Gallery extends Component {
+  state = {
+    galleryImageUrl: imagesList[0].imageUrl,
+    galleryImageAltText: imagesList[0].imageAltText,
+  }
+
+  onThumbnailImageSelect = selectedImageData =>
+    this.setState({
+      galleryImageUrl: selectedImageData.imageUrl,
+      galleryImageAltText: selectedImageData.imageAltText,
+    })
+
+  render() {
+    const {galleryImageUrl, galleryImageAltText} = this.state
+
+    return (
+      <div className="gallery-bg-container">
+        <img
+          className="gallery-img"
+          src={galleryImageUrl}
+          alt={galleryImageAltText}
+        />
+        <h1 className="gallery-title">Nature Photography</h1>
+        <p className="gallery-attribution">Nature Photography by Rahul</p>
+        <ul className="gallery-thumbnails-container">
+          {imagesList.map(imageData => (
+            <ThumbnailItem
+              key={imageData.id}
+              itemData={imageData}
+              onItemSelect={this.onThumbnailImageSelect}
+            />
+          ))}
+        </ul>
+      </div>
+    )
+  }
+}
