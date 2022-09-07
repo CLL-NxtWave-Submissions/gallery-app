@@ -1,1 +1,11 @@
-/* Write your code here. */
+.gallery-thumbnail {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 0.6rem;
+  margin-right: 1rem;
+  opacity: 0.5;
+}
+
+.selected-gallery-thumbnail {
+  opacity: 1;
+}

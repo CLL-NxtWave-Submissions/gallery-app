@@ -1,1 +1,35 @@
-/* Write your code here. */
+.gallery-bg-container {
+  height: 100vh;
+  border: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto';
+}
+
+.gallery-img {
+  height: 60vh;
+  width: 100%;
+  border-radius: 0.8rem;
+}
+
+.gallery-title {
+  color: #1e293b;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.gallery-attribution {
+  color: #64748b;
+  font-size: 1rem;
+}
+
+.gallery-thumbnails-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding-left: 0;
+}
